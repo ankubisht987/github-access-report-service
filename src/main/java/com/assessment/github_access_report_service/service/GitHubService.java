@@ -16,7 +16,11 @@ import com.assessment.github_access_report_service.demo.RepoAccessDetail;
 @Service
 public class GitHubService {
 
-    private final RestTemplate restTemplate = new RestTemplate();
+     private final RestTemplate restTemplate;
+
+    public GitHubService(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     public List<AccessReportResponse> getOrganizationAccessReport(String orgName) {
 
